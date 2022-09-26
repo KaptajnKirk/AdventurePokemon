@@ -4,7 +4,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Engine {
-    Main main = new Main();
 
     public void game() {
 
@@ -23,9 +22,10 @@ public class Engine {
                 case "End", "End program", "Exit", "Exit program" -> {
                     System.out.println("Program ended");
                     System.exit(0);
+
                 }
             }
-
+            break;
         }
     }
 }
