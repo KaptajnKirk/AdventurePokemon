@@ -39,6 +39,6 @@ public Map(){
 
   room9.setWest(room8);
   room9.setNorth(room6);
-}
 
+}
 }
