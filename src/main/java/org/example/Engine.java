@@ -20,14 +20,12 @@ public class Engine {
                 case "Go East", "E", "East" -> System.out.println("Going East");
                 case "Go West", "W", "West" -> System.out.println("Going West");
                 case "Look Around", "Look" -> System.out.println("Looking around");
-                case "End","End program","Exit","Exit program" -> {
+                case "End", "End program", "Exit", "Exit program" -> {
                     System.out.println("Program ended");
                     System.exit(0);
                 }
-                }
-
             }
-
 
         }
     }
+}
