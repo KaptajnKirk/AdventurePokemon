@@ -8,6 +8,7 @@ public class Rooms {
   private Rooms east;
   private Rooms north;
   private Rooms west;
+  private Rooms currentPosition;
 
   public Rooms(String name, String description) {
     this.name = name;
@@ -56,5 +57,21 @@ public class Rooms {
 
   public void setWest(Rooms west) {
     this.west = west;
+  }
+
+  public Rooms getCurrentPosition() {
+    return currentPosition;
+  }
+
+  public void setCurrentPosition(Rooms currentPosition) {
+    this.currentPosition = currentPosition;
+  }
+
+  @Override
+  public String toString() {
+    return "Rooms{" +
+        "name='" + name + '\'' +
+        ", description='" + description + '\'' +
+        '}';
   }
 }

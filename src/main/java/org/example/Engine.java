@@ -5,10 +5,20 @@ import java.util.Scanner;
 
 public class Engine {
 
+    private boolean run;
+
+    Rooms room1 = new Rooms("RoomOne", "Description is here");
+
+    private Rooms playerposition = room1;
+
     public void game() {
 
-        while (true) {
+        run = true;
+        do {
+
             System.out.println("Welcome to this game!");
+            playerposition.setCurrentPosition(room1);
+            playerposition.getDescription();
 
             Scanner scanner = new Scanner(System.in);
             String choice = scanner.nextLine();
@@ -21,11 +31,11 @@ public class Engine {
                 case "Look Around", "Look" -> System.out.println("Looking around");
                 case "End", "End program", "Exit", "Exit program" -> {
                     System.out.println("Program ended");
+                    run = false;
                     System.exit(0);
 
                 }
             }
-            break;
-        }
+        } while (run = true);
     }
 }

@@ -13,6 +13,7 @@ public class Map {
   Rooms room9 = new Rooms("Room9","Description here");
 
 public Map(){
+  room1.setCurrentPosition(room1);
   room1.setEast(room2);
   room1.setSouth(room4);
 
