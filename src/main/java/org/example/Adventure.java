@@ -1,24 +1,31 @@
 package org.example;
 
+import java.util.ArrayDeque;
 import java.util.Scanner;
 
 public class Adventure {
 
-    private boolean run = true;
+    private Map map;
+  public Adventure() {
+      map = new Map();
+      playerposition = map.room1;
+  }
 
-    Rooms room1 = new Rooms("RoomOne", "Description is here");
+    private Rooms playerposition = null;
 
-    private Rooms playerposition = room1;
+    public void goEast(){
+        playerposition = playerposition.getEast();
+    }
 
     public void game() {
 
         System.out.println("Welcome to this game!");
+        boolean run = true;
 
         do {
 
-            playerposition.setCurrentPosition(room1);
-            playerposition.getName();
-            playerposition.getDescription();
+
+//            playerposition.setCurrentPosition(room1);
 
             Scanner scanner = new Scanner(System.in);
             String choice = scanner.nextLine();
@@ -26,9 +33,9 @@ public class Adventure {
             switch (choice) {
                 case "Go South", "S", "South" -> System.out.println("Going South");
                 case "Go North", "N", "North" -> System.out.println("Going North");
-                case "Go East", "E", "East" -> System.out.println("Going East");
+                case "Go East", "E", "East" -> goEast();
                 case "Go West", "W", "West" -> System.out.println("Going West");
-                case "Look Around", "Look" -> System.out.println("Looking around");
+                case "Look Around", "Look" -> System.out.println(playerposition.getDescription());
                 case "End", "End program", "Exit", "Exit program" -> {
                     System.out.println("Program ended");
                     run = false;

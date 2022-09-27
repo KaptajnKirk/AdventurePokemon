@@ -2,8 +2,8 @@ package org.example;
 
 public class Map {
 
-  Rooms room1 = new Rooms("Room1","Description here");
-  Rooms room2 = new Rooms("Room2","Description here");
+  Rooms room1 = new Rooms("Room1","Description of room1 here");
+  Rooms room2 = new Rooms("Room2","Description of room2 here");
   Rooms room3 = new Rooms("Room3","Description here");
   Rooms room4 = new Rooms("Room4","Description here");
   Rooms room5 = new Rooms("Room5","Description here");
@@ -13,7 +13,6 @@ public class Map {
   Rooms room9 = new Rooms("Room9","Description here");
 
 public Map(){
-  room1.setCurrentPosition(room1);
   room1.setEast(room2);
   room1.setSouth(room4);
   room1.setWest(null);
