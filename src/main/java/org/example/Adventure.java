@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class Adventure {
 
     private Map map;
+    private UI ui;
   public Adventure() {
       map = new Map();
+      ui = new UI();
       playerposition = map.room1;
   }
 
@@ -57,12 +59,13 @@ public class Adventure {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "Go South", "S", "South" -> goSouth();
-                case "Go North", "N", "North" -> goNorth();
-                case "Go East", "E", "East" -> goEast();
-                case "Go West", "W", "West" -> goWest();
-                case "Look Around", "Look" -> System.out.println(playerposition.getDescription());
-                case "End", "End program", "Exit", "Exit program" -> {
+                case "go south", "s", "south" -> goSouth();
+                case "go north", "n", "north" -> goNorth();
+                case "go east", "e", "east" -> goEast();
+                case "Go west", "w", "west" -> goWest();
+                case "help" -> ui.helpMenu();
+                case "look around", "look" -> System.out.println(playerposition.getDescription());
+                case "end", "end program", "exit", "exit program" -> {
                     System.out.println("Program ended");
                     run = false;
                     System.exit(0);
