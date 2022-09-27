@@ -13,10 +13,12 @@ public class Engine {
 
     public void game() {
 
+        System.out.println("Welcome to this game!");
+
         do {
 
-            System.out.println("Welcome to this game!");
             playerposition.setCurrentPosition(room1);
+            playerposition.getName();
             playerposition.getDescription();
 
             Scanner scanner = new Scanner(System.in);
