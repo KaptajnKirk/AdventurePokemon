@@ -4,13 +4,13 @@ public class Map {
 
   Rooms room1 = new Rooms("Room1","Description of room1 here");
   Rooms room2 = new Rooms("Room2","Description of room2 here");
-  Rooms room3 = new Rooms("Room3","Description here");
-  Rooms room4 = new Rooms("Room4","Description here");
-  Rooms room5 = new Rooms("Room5","Description here");
-  Rooms room6 = new Rooms("Room6","Description here");
-  Rooms room7 = new Rooms("Room7","Description here");
-  Rooms room8 = new Rooms("Room8","Description here");
-  Rooms room9 = new Rooms("Room9","Description here");
+  Rooms room3 = new Rooms("Room3","Description of room3 here");
+  Rooms room4 = new Rooms("Room4","Description of room4 here");
+  Rooms room5 = new Rooms("Room5","Description of room5 here");
+  Rooms room6 = new Rooms("Room6","Description of room6 here");
+  Rooms room7 = new Rooms("Room7","Description of room7 here");
+  Rooms room8 = new Rooms("Room8","Description of room8 here");
+  Rooms room9 = new Rooms("Room9","Description of room9 here");
 
 public Map(){
   room1.setEast(room2);

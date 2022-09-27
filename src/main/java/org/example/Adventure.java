@@ -14,8 +14,34 @@ public class Adventure {
     private Rooms playerposition = null;
 
     public void goEast(){
+      if (playerposition.getEast() == null)
+        System.out.println("You cannot go this way");
+      else
         playerposition = playerposition.getEast();
     }
+
+    public void goNorth(){
+      if (playerposition.getNorth() == null)
+        System.out.println("You cannot go this way");
+      else
+        playerposition = playerposition.getNorth();
+    }
+
+  public void goSouth(){
+    if (playerposition.getSouth() == null)
+      System.out.println("You cannot go this way");
+    else
+      playerposition = playerposition.getSouth();
+  }
+
+  public void goWest(){
+    if (playerposition.getWest() == null)
+      System.out.println("You cannot go this way");
+    else
+      playerposition = playerposition.getWest();
+  }
+
+
 
     public void game() {
 
@@ -31,10 +57,10 @@ public class Adventure {
             String choice = scanner.nextLine();
 
             switch (choice) {
-                case "Go South", "S", "South" -> System.out.println("Going South");
-                case "Go North", "N", "North" -> System.out.println("Going North");
+                case "Go South", "S", "South" -> goSouth();
+                case "Go North", "N", "North" -> goNorth();
                 case "Go East", "E", "East" -> goEast();
-                case "Go West", "W", "West" -> System.out.println("Going West");
+                case "Go West", "W", "West" -> goWest();
                 case "Look Around", "Look" -> System.out.println(playerposition.getDescription());
                 case "End", "End program", "Exit", "Exit program" -> {
                     System.out.println("Program ended");
