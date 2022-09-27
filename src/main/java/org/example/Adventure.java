@@ -1,9 +1,8 @@
 package org.example;
 
-import java.util.Map;
 import java.util.Scanner;
 
-public class Engine {
+public class Adventure {
 
     private boolean run;
 
