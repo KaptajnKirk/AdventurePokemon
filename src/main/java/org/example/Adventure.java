@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Adventure {
 
-    private boolean run;
+    private boolean run = true;
 
     Rooms room1 = new Rooms("RoomOne", "Description is here");
 
@@ -12,7 +12,6 @@ public class Adventure {
 
     public void game() {
 
-        run = true;
         do {
 
             System.out.println("Welcome to this game!");
