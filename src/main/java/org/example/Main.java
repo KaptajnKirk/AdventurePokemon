@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
   public static void main(String[] args) {
-    Engine run = new Engine();
+    Adventure run = new Adventure();
     run.game();
   }
 }
