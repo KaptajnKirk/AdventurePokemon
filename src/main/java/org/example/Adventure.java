@@ -8,14 +8,15 @@ public class Adventure {
 
     private UI ui;
     private Player player;
-  public Adventure() {
-      ui = new UI();
-      player = new Player();
-  }
+
+    public Adventure() {
+        ui = new UI();
+        player = new Player();
+    }
 
     public void game() {
 
-        System.out.println("Welcome to this game!");
+        System.out.println("Welcome to Pokémon gen 1.\nBeat all 8 Pokémon Gyms and collect your badges to enter Indigo Plateau,\nand the chance to battle the Elite four and the Pokémon champion!");
         boolean run = true;
 
         do {
@@ -35,7 +36,6 @@ public class Adventure {
                     System.out.println("Program ended");
                     run = false;
                     System.exit(0);
-
                 }
             }
         } while (run = true);
