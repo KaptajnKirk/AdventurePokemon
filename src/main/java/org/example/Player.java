@@ -1,7 +1,11 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Player {
     private Rooms playerposition;
+
+    private ArrayList<Item> inventory;
     private Map map;
 
     public Player(){

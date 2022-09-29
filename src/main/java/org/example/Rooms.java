@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Rooms {
 
   private String name;
@@ -9,6 +11,8 @@ public class Rooms {
   private Rooms north;
   private Rooms west;
   private Rooms currentPosition;
+
+  private ArrayList<Item> items;
 
   public Rooms(String name, String description) {
     this.name = name;
