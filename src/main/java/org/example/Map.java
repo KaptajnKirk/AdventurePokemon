@@ -48,4 +48,9 @@ public class Map {
         room3.addItems(pokeball);
         room6.addItems(pokeball);
     }
+
+    //Getter for starting room
+    public Rooms getRoom1() {
+        return room1;
+    }
 }

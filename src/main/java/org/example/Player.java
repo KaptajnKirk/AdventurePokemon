@@ -5,13 +5,11 @@ import java.util.ArrayList;
 public class Player {
     private Rooms playerposition;
 
+    private boolean itemChecker;
+
     private ArrayList<Item> inventory;
     private Map map;
 
-    public Player(){
-        map = new Map();
-        playerposition = map.room1;
-    }
 
     public Rooms getPlayerposition(){
         return playerposition;
@@ -65,5 +63,30 @@ public class Player {
             System.out.println("You cannot go this way");
         else
             playerposition = playerposition.getWest();
+    }
+
+    public void addToInventory(String item) {
+        if (item.equals(" ")) {
+            System.out.println("Are you trying to pickup nothing?\nTry again!");
+        } else {
+            takeItem(playerposition.getItems(),item);
+        }
+    }
+
+    public void takeItem(ArrayList<Item> items, String item){
+        Item temp;
+        itemChecker = false;
+        for (int x = 0; x < items.size(); x++) {
+            temp = items.get(x);
+            if (item.equals(temp.getName())) {
+                itemChecker = true;
+                inventory.add(temp);
+                items.remove(x);
+                x = items.size();
+                System.out.println("You have added " + item + " to your inventory!");
+            }
+        }if (!itemChecker) {
+            System.out.println("There is no " + item + " nearby!");
+        }
     }
 }
