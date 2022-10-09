@@ -12,7 +12,7 @@ public class Rooms {
     private Rooms west;
     private Rooms currentPosition;
 
-    private ArrayList<Item> items;
+    private ArrayList<Item> items = new ArrayList<>();
 
     public Rooms(String name, String description) {
         this.name = name;
@@ -70,6 +70,16 @@ public class Rooms {
     public void setCurrentPosition(Rooms currentPosition) {
         this.currentPosition = currentPosition;
     }
+
+    public void addItems(Item item) {
+        this.items.add(item);
+    }
+
+    public ArrayList<Item> getItems(){
+        return items;
+    }
+
+
 
     @Override
     public String toString() {

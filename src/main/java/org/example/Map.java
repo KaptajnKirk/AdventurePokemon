@@ -12,7 +12,10 @@ public class Map {
     Rooms room8 = new Rooms("Vermillion City", "Description of room8 here");
     Rooms room9 = new Rooms("Fuschia City", "Description of room9 here");
 
+    Item pokeball = new Item("Master Pokeball");
     public Map() {
+
+        //connecting Rooms
         room1.setEast(room2);
         room1.setSouth(room4);
 
@@ -40,5 +43,9 @@ public class Map {
         room9.setWest(room8);
         room9.setNorth(room6);
 
+        //Adding Items to rooms;
+        room1.addItems(pokeball);
+        room3.addItems(pokeball);
+        room6.addItems(pokeball);
     }
 }
