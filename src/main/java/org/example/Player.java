@@ -4,38 +4,21 @@ import java.util.ArrayList;
 
 public class Player {
     private Rooms playerposition;
-
     private boolean itemChecker;
-
     private ArrayList<Item> inventory;
     private Map map;
+    private int hp;
 
+
+    public Player(Rooms starterRoom) {
+        this.playerposition = starterRoom;
+        this.inventory = new ArrayList<>();
+        this.hp = 100;
+    }
 
     public Rooms getPlayerposition(){
         return playerposition;
     }
-
-
-   /* public boolean move(String direction) {
-        Rooms requestedRoom = null;
-
-        if (direction.charAt(0) == 'n') {
-            requestedRoom = playerposition.getNorth();
-        } else if (direction.charAt(0) == 's') {
-            requestedRoom = playerposition.getSouth();
-        } else if (direction.charAt(0) == 'w') {
-            requestedRoom = playerposition.getWest();
-        } else if (direction.charAt(0) == 'e') {
-            requestedRoom = playerposition.getEast();
-        }
-
-        if (requestedRoom!= null) {
-            playerposition = requestedRoom;
-            return true;
-        } else {
-          return false;
-        }
-    }*/
 
     public void goEast() {
         if (playerposition.getEast() == null)

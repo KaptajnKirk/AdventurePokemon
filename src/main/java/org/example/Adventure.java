@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Adventure {
 
 
-    private UI ui;
+    private UI ui = new UI();
 
     Map map = new Map();
 
-    Player player = new Player();
+    Player player = new Player(map.getRoom1());
 
     Scanner scanner = new Scanner(System.in);
     private String input1;
@@ -30,13 +30,16 @@ public class Adventure {
         }
     }
 
+    public void movePrompt (){
+        ui.nextMove();
+        choiceSplitter();
+    }
+
 
     public void game() {
-
-        System.out.println("Welcome to Pokémon gen 1.\nBeat all 8 Pokémon Gyms and collect your badges to enter Indigo Plateau,\nand the chance to battle the Elite four and the Pokémon champion!");
-        boolean run = true;
-        choiceSplitter();
-        while (run){
+        ui.gameIntro();
+        movePrompt();
+        while (true){
             switch (input1) {
                 case "take" -> player.addToInventory(input2);
                 case "help" -> ui.helpMenu();
@@ -52,7 +55,6 @@ public class Adventure {
                 }
                 case "exit" -> {
                     System.out.println("Program ended");
-                    run = false;
                     System.exit(0);
                 }
             }
