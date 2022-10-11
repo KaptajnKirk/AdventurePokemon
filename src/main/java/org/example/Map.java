@@ -2,6 +2,8 @@ package org.example;
 
 public class Map {
 
+    private Rooms currentRoom;
+
     Rooms room1 = new Rooms("Pewter City", "Pewter City is a small place in north west region of Kanto.\nIt houses the first available Pokémon gym, lead by a young man called Brock.\nThe cave east of town seems to be your way out of the city to continue your adventure.");
     Rooms room2 = new Rooms("Cerulean City", "Cerulean city is a medium sized city in the north region of Kanto. \nHere Misty is the Gym leader, with her water type pokémon and short temper.\nThe bridge north of the city is currently under construction, making it impossible to go north.\n  ");
     Rooms room3 = new Rooms("Lavender City ", "Description of room3 here");
@@ -13,6 +15,16 @@ public class Map {
     Rooms room9 = new Rooms("Fuschia City", "Description of room9 here");
 
     Item pokeball = new Item("Master Pokeball");
+
+
+    //Getter for starting room
+    public Rooms getRoom1() {
+        return room1;
+    }
+
+    public void setCurrentRoom(Rooms currentRoom){
+        this.currentRoom = currentRoom;
+    }
     public Map() {
 
         //connecting Rooms
@@ -49,8 +61,5 @@ public class Map {
         room6.addItems(pokeball);
     }
 
-    //Getter for starting room
-    public Rooms getRoom1() {
-        return room1;
-    }
+
 }

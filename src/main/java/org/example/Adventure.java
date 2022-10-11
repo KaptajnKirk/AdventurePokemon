@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Adventure {
 
 
-    private UI ui = new UI();
+    UI ui = new UI();
 
     Map map = new Map();
 
@@ -31,32 +31,37 @@ public class Adventure {
     }
 
     public void movePrompt (){
+        ui.playerHpStatus(player.getHp());
         ui.nextMove();
         choiceSplitter();
     }
 
 
-    public void game() {
+    public void game() throws InterruptedException {
         ui.gameIntro();
-        movePrompt();
-        while (true){
+        boolean run = true;
+
+        while (run){
+            movePrompt();
             switch (input1) {
                 case "take" -> player.addToInventory(input2);
+                case "inventory", "inv" -> player.displayInventory();
+                case "drop", "discard" -> player.dropItem(input2);
                 case "help" -> ui.helpMenu();
-                case "look" -> System.out.println(player.getPlayerposition().getDescription());
+                case "look" -> player.lookCommandDescription();
                 case "go" -> {
                     switch (input2) {
-                        case "north", "n" -> player.goNorth();
-                        case "south", "s" -> player.goSouth();
-                        case "east", "e" -> player.goEast();
-                        case "west", "w" -> player.goWest();
-                        default -> ui.directionNull();
+                        case "north", "n" -> player.move(player.getCurrentPosition().getNorth());
+                        case "south", "s" -> player.move(player.getCurrentPosition().getSouth());
+                        case "east", "e" -> player.move(player.getCurrentPosition().getEast());
+                        case "west", "w" -> player.move(player.getCurrentPosition().getWest());
+                        default -> ui.incompleteDirection();
                     }
                 }
                 case "exit" -> {
                     System.out.println("Program ended");
-                    System.exit(0);
-                }
+                    run = false;
+                } default -> System.out.println("Invalid input");
             }
         }
     }
