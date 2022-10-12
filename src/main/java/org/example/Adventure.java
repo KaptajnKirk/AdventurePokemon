@@ -50,6 +50,7 @@ public class Adventure {
                 case "help" -> ui.helpMenu();
                 case "look" -> player.lookCommandDescription();
                 case "eat", "consume" -> player.eatItem(input2);
+                case "choose", "use" -> player.choosePokemon(input2);
                 case "go" -> {
                     switch (input2) {
                         case "north", "n" -> player.move(player.getCurrentPosition().getNorth());

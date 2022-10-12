@@ -12,6 +12,8 @@ public class Player {
     private UI ui = new UI();
     private int hp;
 
+    private Weapons currentWeapon;
+
 
 
     private String input1;
@@ -88,21 +90,21 @@ public class Player {
 //            playerposition = playerposition.getWest();
 //    }
 
-    public void findItemDrop(String item){
+    public void droppedItem(String item){
         itemChecker = false;
-        Item temp;
+        Item droppedItem;
         for (int x = 0; x < inventory.size(); x++) {
-            temp = inventory.get(x);
-            if (item.equals(temp.getName())) {
+            droppedItem = inventory.get(x);
+            if (item.equals(droppedItem.getName())) {
                 itemChecker = true;
-                inventory.remove(temp);
-                currentPosition.addItems(temp);
+                inventory.remove(droppedItem);
+                currentPosition.addItems(droppedItem);
                 x = inventory.size();
-                System.out.println("You have dropped " + item + " on the floor!");
+                System.out.println("You have dropped " + item);
             }
         }
         if (!itemChecker) {
-            System.out.println("You don't have " + item + " in your inventory!");
+            System.out.println("You don't have " + item + " in your inventory");
         }
     }
 
@@ -118,7 +120,7 @@ public class Player {
         if (item.equals(" ")) {
             System.out.println("You have nothing to drop that matches that description");
         } else {
-            findItemDrop(item);
+            droppedItem(item);
         }
     }
 
@@ -183,6 +185,37 @@ public class Player {
             if (!foodChecker) {
                 System.out.println("You dont have " + food + " in your inventory");
             }
+        }
+    }
+
+    public void choosePokemon(String item) {
+        Item chosenPokemon;
+        boolean weaponChecker = false;
+        if (item.equals(" ")) {
+            System.out.println("Please specify what pokemon you want to choose");
+        } else {
+            for (int x = 0; x < inventory.size(); x++) {
+                weaponChecker = true;
+                chosenPokemon = inventory.get(x);
+                if (item.equals(chosenPokemon.getName())) {
+                    if (chosenPokemon instanceof Weapons) {
+                        if (currentWeapon != null) {
+                            System.out.println("You have replaced your chosen " + currentWeapon + " with " + item);
+                            inventory.add(currentWeapon);
+                            inventory.remove(x);
+                            currentWeapon = (Weapons)chosenPokemon;
+                            x = inventory.size();
+                        } else {
+                            System.out.println("You have chosen " + item + "!");
+                            inventory.remove(x);
+                            currentWeapon = (Weapons) chosenPokemon;
+                            x = inventory.size();
+                        }
+                    } else System.out.println("You can only choose pokemon!");
+                }
+            }
+        }if (!weaponChecker) {
+            System.out.println("You do not have " + item + " in your list of pokemon!");
         }
     }
 }
