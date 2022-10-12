@@ -14,7 +14,7 @@ public class Map {
     Rooms room8 = new Rooms("Vermillion City", "Description of room8 here");
     Rooms room9 = new Rooms("Fuschia City", "Description of room9 here");
 
-    Item pokeball = new Item("Master Pokeball");
+    Item pokeball = new Item("master pokeball");
 
 
     //Getter for starting room

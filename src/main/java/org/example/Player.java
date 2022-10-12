@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Player {
     private Rooms currentPosition;
@@ -9,6 +11,22 @@ public class Player {
     private Map map = new Map();
     private UI ui = new UI();
     private int hp;
+
+    private String input1;
+    private String input2;
+    Scanner scanner = new Scanner(System.in);
+
+
+    public void choiceSplitter() {
+        String choice = scanner.nextLine();
+        if (choice.contains(" ")) {
+            input1 = choice.substring(0, choice.indexOf(" ")).toLowerCase(Locale.ROOT);
+            input2 = choice.substring((choice.indexOf(" ") + 1)).toLowerCase(Locale.ROOT);
+        } else {
+            input1 = choice.toLowerCase(Locale.ROOT);
+            input2 = " ";
+        }
+    }
 
 
     public Player(Rooms starterRoom) {
@@ -88,7 +106,7 @@ public class Player {
 
     public void addToInventory(String item) {
         if (item.equals(" ")) {
-            System.out.println("Are you trying to pickup nothing?\nTry again!");
+            System.out.println("Nothing in this room matches that description\nTry again!");
         } else {
             takeItem(currentPosition.getItems(),item);
         }
@@ -127,5 +145,12 @@ public class Player {
 
     public void lookCommandDescription () {
         ui.roomDescription(currentPosition.getDescription());
+        itemsInRoom();
+    }
+
+    public void itemsInRoom() {
+        if (currentPosition.getItems().size() > 0) {
+            ui.roomItems(currentPosition.getItems());
+        }
     }
 }

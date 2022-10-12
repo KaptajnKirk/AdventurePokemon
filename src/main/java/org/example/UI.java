@@ -1,6 +1,9 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class UI {
+
 
     public void helpMenu() {
         System.out.println("These are the following commands you can use in the game: \n'go' followed by a direction; either 'north', 'east', 'south', 'west', Or 'e', 'w', 's' or 'n' to move \n'look' to look around the room \n'help' to show this menu \n'exit' to exit the game ");
@@ -28,7 +31,11 @@ public class UI {
     }
 
     public void roomDescription(String description){
-        System.out.println("You are in" + description + "\n");
+        System.out.println("You are in " + description + "\n");
+    }
+
+    public void roomItems(ArrayList<Item> item) {
+        System.out.println("You see the following items in the room: " + item);
     }
 
 }
