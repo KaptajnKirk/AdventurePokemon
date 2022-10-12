@@ -31,7 +31,7 @@ public class Enemy {
     return enemyPokemon;
   }
 
-  public int getEnemyDamage(){
+  public int getEnemyDamage() {
     return enemyPokemon.getDps();
   }
 
@@ -40,7 +40,7 @@ public class Enemy {
     return enemyName;
   }
 
-  public void damageTaken(int damage){
+  public void damageTaken(int damage) {
     this.enemyHp -= damage;
   }
 }
