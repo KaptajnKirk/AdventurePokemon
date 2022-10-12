@@ -4,17 +4,19 @@ public class Map {
 
     private Rooms currentRoom;
 
-    Rooms room1 = new Rooms("Pewter City", "Pewter City is a small place in north west region of Kanto.\nIt houses the first available Pokémon gym, lead by a young man called Brock.\nThe cave east of town seems to be your way out of the city to continue your adventure.");
-    Rooms room2 = new Rooms("Cerulean City", "Cerulean city is a medium sized city in the north region of Kanto. \nHere Misty is the Gym leader, with her water type pokémon and short temper.\nThe bridge north of the city is currently under construction, making it impossible to go north.\n  ");
-    Rooms room3 = new Rooms("Lavender City ", "Description of room3 here");
-    Rooms room4 = new Rooms("Viridian City", "You entered Viridian City, a city with multiple houses, a lake and Pokémon Gym.\nThe Gym is currently locked, but maybe that will change in the future.\nIt looks like the only way out of town is to continue north through the forest");
-    Rooms room5 = new Rooms("Celadon City", "Description of room5 here");
-    Rooms room6 = new Rooms("Saffron City", "Description of room6 here");
-    Rooms room7 = new Rooms("Pallet Town", "You´re in a small town, with only a couple of houses and what looks like a lab.\nThe town is almost entirely surrounded by trees with a body of water in one end, and a small path at the other end of town.\nThere is a sign that says ´Welcome to Pallet Town´");
-    Rooms room8 = new Rooms("Vermillion City", "Description of room8 here");
-    Rooms room9 = new Rooms("Fuschia City", "Description of room9 here");
+    private Rooms room1 = new Rooms("Pewter City", "Pewter City is a small place in north west region of Kanto.\nIt houses the first available Pokémon gym, lead by a young man called Brock.\nThe cave east of town seems to be your way out of the city to continue your adventure.");
+    private Rooms room2 = new Rooms("Cerulean City", "Cerulean city is a medium sized city in the north region of Kanto. \nHere Misty is the Gym leader, with her water type pokémon and short temper.\nThe bridge north of the city is currently under construction, making it impossible to go north.\n  ");
+    private Rooms room3 = new Rooms("Lavender City ", "Description of room3 here");
+    private Rooms room4 = new Rooms("Viridian City", "You entered Viridian City, a city with multiple houses, a lake and Pokémon Gym.\nThe Gym is currently locked, but maybe that will change in the future.\nIt looks like the only way out of town is to continue north through the forest");
+    private Rooms room5 = new Rooms("Celadon City", "Description of room5 here");
+    private Rooms room6 = new Rooms("Saffron City", "Description of room6 here");
+    private Rooms room7 = new Rooms("Pallet Town", "You´re in a small town, with only a couple of houses and what looks like a lab.\nThe town is almost entirely surrounded by trees with a body of water in one end, and a small path at the other end of town.\nThere is a sign that says ´Welcome to Pallet Town´");
+    private Rooms room8 = new Rooms("Vermillion City", "Description of room8 here");
+    private Rooms room9 = new Rooms("Fuschia City", "Description of room9 here");
 
-    Item pokeball = new Item("master pokeball");
+    private Item pokeball = new Item("masterball");
+
+    private Food berries = new Food("berries", 20);
 
 
     //Getter for starting room
@@ -59,6 +61,11 @@ public class Map {
         room1.addItems(pokeball);
         room3.addItems(pokeball);
         room6.addItems(pokeball);
+
+        //Adding food to rooms;
+        room1.addItems(berries);
+        room4.addItems(berries);
+        room5.addItems(berries);
     }
 
 

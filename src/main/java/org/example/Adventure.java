@@ -49,6 +49,7 @@ public class Adventure {
                 case "drop", "discard" -> player.dropItem(input2);
                 case "help" -> ui.helpMenu();
                 case "look" -> player.lookCommandDescription();
+                case "eat", "consume" -> player.eatItem(input2);
                 case "go" -> {
                     switch (input2) {
                         case "north", "n" -> player.move(player.getCurrentPosition().getNorth());

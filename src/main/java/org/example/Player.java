@@ -12,6 +12,8 @@ public class Player {
     private UI ui = new UI();
     private int hp;
 
+
+
     private String input1;
     private String input2;
     Scanner scanner = new Scanner(System.in);
@@ -127,13 +129,13 @@ public class Player {
     }
 
     public void takeItem(ArrayList<Item> items, String item){
-        Item temp;
+        Item takenItem;
         itemChecker = false;
         for (int x = 0; x < items.size(); x++) {
-            temp = items.get(x);
-            if (item.equals(temp.getName())) {
+            takenItem = items.get(x);
+            if (item.equals(takenItem.getName())) {
                 itemChecker = true;
-                inventory.add(temp);
+                inventory.add(takenItem);
                 items.remove(x);
                 x = items.size();
                 System.out.println("You have added " + item + " to your inventory!");
@@ -151,6 +153,36 @@ public class Player {
     public void itemsInRoom() {
         if (currentPosition.getItems().size() > 0) {
             ui.roomItems(currentPosition.getItems());
+        }
+    }
+
+    public void eatItem(String food) {
+        Item invFood;
+        boolean foodChecker = false;
+        if (food.equals(" ")) {
+            System.out.println("Please specify what you wanna eat");
+        } else {
+            for (int x = 0; x < inventory.size(); x++) {
+                if (food.equals(inventory.get(x).getName())) {
+                    foodChecker = true;
+                    invFood = inventory.get(x);
+                    if (invFood instanceof Food) {
+                        this.hp += ((Food) invFood).getHp();
+                        ui.eatPrompt(invFood.getName(), ((Food) invFood).getHp());
+                        inventory.remove(invFood);
+                        x = inventory.size();
+                        if (hp > 100) {
+                            hp = 100;
+                            System.out.println("You are already full health!");
+                        }
+                    } else {
+                        System.out.println("You cannot eat " + food);
+                    }
+                }
+            }
+            if (!foodChecker) {
+                System.out.println("You dont have " + food + " in your inventory");
+            }
         }
     }
 }

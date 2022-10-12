@@ -38,4 +38,9 @@ public class UI {
         System.out.println("You see the following items in the room: " + item);
     }
 
+    public void eatPrompt (String name, int hp){
+        System.out.println("You have eaten: " + name);
+        System.out.println("You have gained: " + hp);
+    }
+
 }
