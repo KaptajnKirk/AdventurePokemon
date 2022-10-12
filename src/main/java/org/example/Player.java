@@ -221,6 +221,7 @@ public class Player {
 
     public void attack () {
         System.out.println("You attacked using your " + currentWeapon.getName() + "!");
-        System.out.println("you dealt XXX damage to your enemy!");
+        System.out.println("you dealt " + currentWeapon.getDps() + " damage to your enemy!");
+        System.out.println("Your " + currentWeapon.getName() + " now has " + currentWeapon.getAttacksLeft() + " attacks left");
     }
 }

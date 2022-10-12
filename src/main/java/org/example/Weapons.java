@@ -5,11 +5,6 @@ public abstract class Weapons extends Item {
 
   protected int dps;
 
-
-  public Weapons(String name) {
-    super(name);
-  }
-
   public Weapons(String name, int dps) {
     super(name);
     this.dps = dps;
@@ -20,6 +15,9 @@ public abstract class Weapons extends Item {
   }
 
   public abstract int attack();
+
+  public abstract void rangedAttack();
+  public abstract int getAttacksLeft();
 
 
 }

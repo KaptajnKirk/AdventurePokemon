@@ -18,7 +18,7 @@ public class Map {
 
     private Food berries = new Food("berries", 20);
 
-    private RangedWeapon pikachu = new RangedWeapon("pikachu", 50);
+    private RangedWeapon pikachu = new RangedWeapon ("pikachu", 50, 5);
 
     private MeleeWeapon geodude = new MeleeWeapon("geodude", 30);
 
