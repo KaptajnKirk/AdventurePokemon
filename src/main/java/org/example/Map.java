@@ -6,13 +6,13 @@ public class Map {
 
     private Rooms room1 = new Rooms("Pewter City", "Pewter City is a small place in north west region of Kanto.\nIt houses the first available Pokémon gym, lead by a young man called Brock.\nThe cave east of town seems to be your way out of the city to continue your adventure.");
     private Rooms room2 = new Rooms("Cerulean City", "Cerulean city is a medium sized city in the north region of Kanto. \nHere Misty is the Gym leader, with her water type pokémon and short temper.\nThe bridge north of the city is currently under construction, making it impossible to go north.\n  ");
-    private Rooms room3 = new Rooms("Lavender City ", "Description of room3 here");
-    private Rooms room4 = new Rooms("Viridian City", "You entered Viridian City, a city with multiple houses, a lake and Pokémon Gym.\nThe Gym is currently locked, but maybe that will change in the future.\nIt looks like the only way out of town is to continue north through the forest");
-    private Rooms room5 = new Rooms("Celadon City", "Description of room5 here");
-    private Rooms room6 = new Rooms("Saffron City", "Description of room6 here");
+    private Rooms room3 = new Rooms("Lavender Town ", "The small town of Lavender, looks like any other small town \n but many believe it to be haunted. Other than a big radio tower, the town doesn´t offer much.");
+    private Rooms room4 = new Rooms("Viridian City", "You entered Viridian City, a city with multiple houses, a lake and a Pokémon Gym.\nThe Gym is currently locked, but maybe that will change in the future.\nIt looks like the only way out of town is to continue north through the forest");
+    private Rooms room5 = new Rooms("Celadon City", "Celadon city, the city that never sleeps. Visit the casino \n or check out the biggest marketplace in the region");
+    private Rooms room6 = new Rooms("Saffron City", "One of the biggest cities in the region, but very little to do. \n Most people avoid the city do to it´s unwelcoming vibe");
     private Rooms room7 = new Rooms("Pallet Town", "You´re in a small town, with only a couple of houses and what looks like a lab.\nThe town is almost entirely surrounded by trees with a body of water in one end, and a small path at the other end of town.\nThere is a sign that says ´Welcome to Pallet Town´");
-    private Rooms room8 = new Rooms("Vermillion City", "Description of room8 here");
-    private Rooms room9 = new Rooms("Fuschia City", "Description of room9 here");
+    private Rooms room8 = new Rooms("Vermillion City", "With a big harbour to the south and a beautiful coastline, Vermillion city has an electric vibe \n but something your path east looks to be blocked by something unknown.");
+    private Rooms room9 = new Rooms("Fuschia City", "Known for it´s safari park, Fuschia city attracts a lot of hopeful pokemon trainers, \n but few a lucky to leave with the pokemon the came to catch.");
 
     private Item pokeball = new Item("masterball");
 
