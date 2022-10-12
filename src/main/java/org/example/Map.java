@@ -18,6 +18,11 @@ public class Map {
 
     private Food berries = new Food("berries", 20);
 
+    private RangedWeapon pikachu = new RangedWeapon("pikachu", 50);
+
+    private MeleeWeapon geodude = new MeleeWeapon("geodude", 30);
+
+
 
     //Getter for starting room
     public Rooms getRoom1() {
@@ -66,6 +71,10 @@ public class Map {
         room1.addItems(berries);
         room4.addItems(berries);
         room5.addItems(berries);
+
+        //Adding weapons to rooms;
+        room1.addItems(pikachu);
+        room2.addItems(geodude);
     }
 
 
