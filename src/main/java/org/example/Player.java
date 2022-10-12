@@ -244,7 +244,7 @@ public class Player {
       }
       if (currentPosition.getEnemy() != null) {
         if (currentPosition.getEnemy().getEnemyHp() > 0) {
-          enemyAttackBack();
+          enemyAttack();
         }
       }
       if (currentWeapon.getAttacksLeft() > 0) {
@@ -264,7 +264,7 @@ public class Player {
     }
   }
 
-  public void enemyAttackBack() {
+  public void enemyAttack() {
     int enemyDamage = currentPosition.getEnemy().getEnemyDamage();
     hp -= enemyDamage;
     System.out.println("The trainer attacks you with his pokemon and deals " + enemyDamage + " to you!");

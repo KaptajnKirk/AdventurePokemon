@@ -65,6 +65,12 @@ public class Adventure {
         }
         default -> System.out.println("Invalid input");
       }
+      if (player.getHp() <= 0) {
+        System.out.println("Your HP have reached zero, and you have failed as a pokemon trainer!");
+        System.out.println("\n");
+        System.out.println("Game over!");
+        run = false;
+      }
     }
   }
 }
