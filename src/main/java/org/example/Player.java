@@ -218,4 +218,9 @@ public class Player {
             System.out.println("You do not have " + item + " in your list of pokemon!");
         }
     }
+
+    public void attack () {
+        System.out.println("You attacked using your " + currentWeapon.getName() + "!");
+        System.out.println("you dealt XXX damage to your enemy!");
+    }
 }
