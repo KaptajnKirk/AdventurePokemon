@@ -58,7 +58,7 @@ public class Adventure {
                         case "south", "s" -> player.move(player.getCurrentPosition().getSouth());
                         case "east", "e" -> player.move(player.getCurrentPosition().getEast());
                         case "west", "w" -> player.move(player.getCurrentPosition().getWest());
-                        default -> ui.incompleteDirection();
+                        default -> ui.invalidDirection();
                     }
                 }
                 case "exit" -> {

@@ -150,6 +150,10 @@ public class Player {
     public void lookCommandDescription () {
         ui.roomDescription(currentPosition.getDescription());
         itemsInRoom();
+        if (currentPosition.getEnemy() != null) {
+            ui.lookForEnemies(currentPosition.getEnemy());
+            ui.lookEnemyDescription(currentPosition.getEnemy().getEnemyDescription());
+        }
     }
 
     public void itemsInRoom() {
@@ -219,9 +223,49 @@ public class Player {
         }
     }
 
-    public void attack () {
-        System.out.println("You attacked using your " + currentWeapon.getName() + "!");
-        System.out.println("you dealt " + currentWeapon.getDps() + " damage to your enemy!");
-        System.out.println("Your " + currentWeapon.getName() + " now has " + currentWeapon.getAttacksLeft() + " attacks left");
+    public void weaponAttack(){
+        int damageDealt;
+        currentWeapon.attack();
+        damageDealt = currentWeapon.getDps();
+        currentPosition.getEnemy().damageTaken(damageDealt);
+        System.out.println("You dealt " + damageDealt + " damage");
     }
+
+    public void attack () {
+        if (currentWeapon != null) {
+            if (currentPosition.getEnemy()==null){
+                System.out.println("There is no trainer in the room");
+            } else if (currentWeapon.getAttacksLeft() == 0) {
+                System.out.println("Your pokemon have no more attacks left! Choose another pokemon!");
+            } else {
+                weaponAttack();
+                enemyDeath();
+            } if (currentPosition.getEnemy()!=null){
+                if(currentPosition.getEnemy().getEnemyHp() > 0){
+                    enemyAttackBack();
+                }
+            } if (currentWeapon.getAttacksLeft() > 0) {
+                currentWeapon.rangedAttack();
+                System.out.println("Your pokemon have " + currentWeapon.getAttacksLeft() + " attacks left!");
+            }
+        } else {
+            System.out.println("You have no weapon equipped");
+        }
+    }
+
+    public void enemyDeath(){
+        if (currentPosition.getEnemy().getEnemyHp() <=0){
+            System.out.println("You defeated the trainer of this gym! Congratulations! You can now collect his pokemon!");
+            currentPosition.addItems(currentPosition.getEnemy().getEnemyPokemon());
+            currentPosition.removeEnemy();
+        }
+    }
+
+    public void enemyAttackBack(){
+        int enemyDamage = currentPosition.getEnemy().getEnemyDamage();
+        hp -= enemyDamage;
+        System.out.println("The trainer attacks you with his pokemon and deals " + enemyDamage + " to you!");
+    }
+
+
 }

@@ -12,6 +12,8 @@ public class Rooms {
     private Rooms west;
     private Rooms currentPosition;
 
+    private Enemy enemy;
+
     private ArrayList<Item> items = new ArrayList<>();
 
     public Rooms(String name, String description) {
@@ -78,6 +80,20 @@ public class Rooms {
     public ArrayList<Item> getItems(){
         return items;
     }
+
+    public Enemy getEnemy (){
+        return enemy;
+    }
+
+    public void addEnemy (Enemy enemy){
+        this.enemy = enemy;
+    }
+
+    public void removeEnemy (){
+        this.enemy=null;
+    }
+
+
 
 
 

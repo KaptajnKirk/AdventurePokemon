@@ -17,7 +17,7 @@ public class UI {
         System.out.println("You have " + hp + " HP left");
     }
 
-    public void incompleteDirection(){
+    public void invalidDirection(){
         System.out.println("Where do you want to go?");
         System.out.println("Please type something like 'go east' or 'go north'");
     }
@@ -41,6 +41,14 @@ public class UI {
     public void eatPrompt (String name, int hp){
         System.out.println("You have eaten: " + name);
         System.out.println("You have gained: " + hp);
+    }
+
+    public void lookForEnemies(Enemy enemy){
+        System.out.println("The following trainers are in this gym: " + enemy);
+    }
+
+    public void lookEnemyDescription(String description) {
+        System.out.println(description);
     }
 
 }
