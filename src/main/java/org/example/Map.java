@@ -14,15 +14,42 @@ public class Map {
     private Rooms room8 = new Rooms("Vermillion City", "With a big harbour to the south and a beautiful coastline, Vermillion city has an electric vibe \n but something your path east looks to be blocked by something unknown.");
     private Rooms room9 = new Rooms("Fuschia City", "Known for it´s safari park, Fuschia city attracts a lot of hopeful pokemon trainers, \n but few a lucky to leave with the pokemon the came to catch.");
 
+    //Placerholder testing item
     private Item pokeball = new Item("masterball");
 
-    private Food berries = new Food("berries", 20);
 
-    private RangedWeapon pikachu = new RangedWeapon ("pikachu", 5, 5);
+    private Food berries = new Food("berries", 20);
+    private Food pokepuffs = new Food("pokepuffs", 40);
+
+    private RangedWeapon pikachu = new RangedWeapon ("pikachu", 40, 5);
+    private RangedWeapon starmie = new RangedWeapon("starmie", 40, 2);
+    private RangedWeapon onix = new RangedWeapon("onix", 60, 1);
+    private RangedWeapon vileplume = new RangedWeapon("vileplume", 70, 7);
+    private RangedWeapon kadabra = new RangedWeapon("kadabra", 40, 4);
+
+
 
     private MeleeWeapon geodude = new MeleeWeapon("geodude", 30);
+    private MeleeWeapon ghastly = new MeleeWeapon("ghastly", 20);
+    private MeleeWeapon bulbasaur = new MeleeWeapon("bulbasaur", 30);
+    private MeleeWeapon koffing = new MeleeWeapon("koffing", 40);
 
-    private Enemy brock = new Enemy("A tall dark man, with a smiling face", "Brock", 30, geodude);
+
+
+    private Enemy brock = new Enemy("\n", "Brock", 30, geodude);
+    private Enemy misty = new Enemy("\n", "Misty", 50, starmie);
+    private Enemy arin = new Enemy("\n", "Arin", 50, ghastly);
+    private Enemy giovanni = new Enemy("\n", "Giovanni", 70, onix);
+    private Enemy erika = new Enemy("\n", "Erika", 150, vileplume);
+    private Enemy sabrina = new Enemy("\n", "Sabrina", 40, kadabra);
+    private Enemy professorOak = new Enemy("\n", "Professor Oak", 40, bulbasaur);
+    private Enemy surge = new Enemy("\n", "Lt. Surge", 60, pikachu);
+    private Enemy koga = new Enemy("\n", "Koga", 80, koffing);
+
+
+
+
+
 
 
     //Getter for starting room
@@ -63,23 +90,37 @@ public class Map {
         room9.setWest(room8);
         room9.setNorth(room6);
 
-        //Adding Items to rooms;
-        room1.addItems(pokeball);
-        room3.addItems(pokeball);
-        room6.addItems(pokeball);
 
         //Adding food to rooms;
         room1.addItems(berries);
+        room1.addItems(pokepuffs);
+        room2.addItems(berries);
+        room3.addItems(berries);
+        room4.addItems(berries);
         room4.addItems(berries);
         room5.addItems(berries);
+        room6.addItems(berries);
+        room6.addItems(pokepuffs);
+        room7.addItems(berries);
+        room7.addItems(pokepuffs);
+        room8.addItems(berries);
+        room8.addItems(berries);
+        room9.addItems(berries);
+        room9.addItems(pokepuffs);
 
         //Adding weapons to rooms;
         room1.addItems(pikachu);
-        room2.addItems(geodude);
 
         //Adding enemies to rooms;
         room1.addEnemy(brock);
-        room2.addEnemy(brock);
+        room2.addEnemy(misty);
+        room3.addEnemy(arin);
+        room4.addEnemy(giovanni);
+        room5.addEnemy(erika);
+        room6.addEnemy(sabrina);
+        room7.addEnemy(professorOak);
+        room8.addEnemy(surge);
+        room9.addEnemy(koga);
     }
 
 

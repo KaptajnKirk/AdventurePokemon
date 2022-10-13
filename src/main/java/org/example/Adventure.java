@@ -37,6 +37,9 @@ public class Adventure {
 
   public void game() throws InterruptedException {
     ui.gameIntro();
+    Thread.sleep(5000);
+    ui.helpMenu();
+    Thread.sleep(5000);
     boolean run = true;
 
     while (run) {

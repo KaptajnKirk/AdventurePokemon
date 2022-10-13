@@ -6,7 +6,7 @@ public class UI {
 
 
     public void helpMenu() {
-        System.out.println("These are the following commands you can use in the game: \n'go' followed by a direction; either 'north', 'east', 'south', 'west', Or 'e', 'w', 's' or 'n' to move \n'look' to look around the room \n'help' to show this menu \n'exit' to exit the game ");
+        System.out.println("These are the following commands you can use in the game: \n'go' followed by a direction; either 'north', 'east', 'south', 'west', Or 'e', 'w', 's' or 'n' to move \n'look' to look around the room \n'help' to show this menu \n'exit' to exit the game \n'take' to add an item to your inventory or a pokemon to your list of pokemon \n'inventory', 'inv' for looking in your inventory \n'drop', 'discard' to drop an item in your current location \n'eat', 'consume' to eat a food item and regain HP \n'choose', 'use' to choose a pokemon as your current fighting companion \n'attack' to attack the leader of the gym your are in\n\n");
     }
 
     public void directionNull(){
@@ -23,7 +23,7 @@ public class UI {
     }
 
     public void gameIntro(){
-        System.out.println("Welcome to Pokémon gen 1.\nBeat all 8 Pokémon Gyms and collect your badges to enter Indigo Plateau,\nand the chance to battle the Elite four and the Pokémon champion!");
+        System.out.println("Welcome to Pokémon gen 1.\nBeat all 8 Pokémon Gyms and collect your badges to enter Indigo Plateau,\nand the chance to battle the Elite four and the Pokémon champion!\n\n");
     }
 
     public void nextMove(){
